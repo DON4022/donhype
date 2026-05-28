@@ -6,5 +6,5 @@ st.set_page_config(layout="wide")
 with open("site.html", "r", encoding="utf-8") as file:
     html_content = file.read()
 
-# This displays it on the screen
+# Crucial Fix: Enable unsafe_allow_html=True to render the page elements
 st.markdown(html_content, unsafe_allow_html=True)
