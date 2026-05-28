@@ -1,0 +1,3274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DONS Nigeria | Online Shopping for Electronics, Fashion, Home, Beauty & Sport</title>
+  
+  <!-- Premium Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* DONS GLOBAL CORE DESIGN SYSTEM (Vanilla CSS) */
+    :root {
+      --primary: #f68b1e;
+      --primary-hover: #e07e1b;
+      --primary-light: #fff5ec;
+      --dark: #313131;
+      --dark-light: #75757a;
+      --light-bg: #f1f1f2;
+      --white: #ffffff;
+      --success: #4caf50;
+      --success-hover: #3d8b41;
+      --danger: #e51a1a;
+      --border-color: #ededed;
+      --border-radius: 4px;
+      --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+      --font-main: 'Inter', sans-serif;
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--light-bg);
+      color: var(--dark);
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, input, select {
+      font-family: inherit;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Scrollbar customization */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f5f5f5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #99;
+    }
+
+    /* GLOBAL CONTAINERS */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* TOP PROMO BAR */
+    .top-promo-bar {
+      background-color: #fce8d5;
+      color: #313131;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(246, 139, 30, 0.2);
+    }
+    .top-promo-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-promo-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .top-promo-left svg {
+      color: var(--primary);
+      width: 14px;
+      height: 14px;
+    }
+    .top-promo-right {
+      display: flex;
+      gap: 16px;
+    }
+    .top-promo-right a {
+      transition: var(--transition);
+    }
+    .top-promo-right a:hover {
+      color: var(--primary);
+    }
+
+    /* MAIN HEADER */
+    header {
+      background-color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+      padding: 12px 0;
+    }
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      user-select: none;
+    }
+    .logo span {
+      color: var(--white);
+      background-color: var(--primary);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    
+    /* SEARCH CONTAINER */
+    .search-box {
+      flex: 1;
+      max-width: 600px;
+      position: relative;
+      display: flex;
+      border: 1px solid #c7c7cd;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+    .search-box:focus-within {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(246, 139, 30, 0.15);
+    }
+    .search-box input {
+      flex: 1;
+      padding: 10px 16px;
+      font-size: 14px;
+      color: var(--dark);
+      background: transparent;
+      border-radius: var(--border-radius) 0 0 var(--border-radius);
+    }
+    .search-box input::placeholder {
+      color: var(--dark-light);
+    }
+    .search-btn {
+      background-color: var(--primary);
+      color: var(--white);
+      font-weight: 600;
+      padding: 0 20px;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+      font-size: 14px;
+    }
+    .search-btn:hover {
+      background-color: var(--primary-hover);
+    }
+    .search-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+    }
+
+    /* HEADER ACTIONS */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .header-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 15px;
+      padding: 8px 12px;
+      border-radius: var(--border-radius);
+      background: transparent;
+      transition: var(--transition);
+      position: relative;
+    }
+    .header-btn:hover {
+      color: var(--primary);
+      background-color: var(--primary-light);
+    }
+    .header-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+    
+    /* CART BADGE */
+    .cart-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: var(--primary);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(25%, -25%);
+      box-shadow: 0 0 0 2px var(--white);
+      animation: badgePulse 0.3s ease-out;
+    }
+
+    @keyframes badgePulse {
+      0% { transform: translate(25%, -25%) scale(1); }
+      50% { transform: translate(25%, -25%) scale(1.3); }
+      100% { transform: translate(25%, -25%) scale(1); }
+    }
+
+    /* DROPDOWNS */
+    .dropdown-container {
+      position: relative;
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: var(--white);
+      box-shadow: var(--shadow-lg);
+      border-radius: var(--border-radius);
+      width: 200px;
+      padding: 8px 0;
+      display: none;
+      flex-direction: column;
+      margin-top: 8px;
+      border: 1px solid var(--border-color);
+      z-index: 101;
+    }
+    .dropdown-container:hover .dropdown-menu {
+      display: flex;
+    }
+    .dropdown-menu a {
+      padding: 10px 16px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+    }
+    .dropdown-menu a:hover {
+      background-color: var(--light-bg);
+      color: var(--primary);
+    }
+    .dropdown-menu .divider {
+      height: 1px;
+      background-color: var(--border-color);
+      margin: 8px 0;
+    }
+    .dropdown-btn-main {
+      margin: 8px 16px;
+      background-color: var(--primary);
+      color: var(--white);
+      text-align: center;
+      padding: 8px;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      font-size: 13px;
+      transition: var(--transition);
+    }
+    .dropdown-btn-main:hover {
+      background-color: var(--primary-hover);
+      color: var(--white) !important;
+    }
+
+    /* MAIN HERO LAYOUT */
+    .hero-section {
+      margin-top: 16px;
+      margin-bottom: 24px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 240px 1fr 220px;
+      gap: 16px;
+      height: 384px;
+    }
+
+    /* LEFT SIDEBAR - CATEGORIES */
+    .sidebar-categories {
+      background-color: var(--white);
+      border-radius: var(--border-radius);
+      padding: 8px 0;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: relative;
+    }
+    .category-item {
+      padding: 8px 16px;
+      font-size: 12.5px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--dark);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .category-item:hover {
+      color: var(--primary);
+      background-color: var(--primary-light);
+    }
+    .category-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .category-label svg {
+      width: 16px;
+      height: 16px;
+      color: var(--dark-light);
+    }
+    .category-item:hover .category-label svg {
+      color: var(--primary);
+    }
+    .category-item svg.arrow {
+      width: 12px;
+      height: 12px;
+      color: #999;
+    }
+
+    /* MEGA MENU FLYOUTS */
+    .mega-menu {
+      position: absolute;
+      top: 0;
+      left: 240px;
+      width: 600px;
+      height: 100%;
+      background-color: var(--white);
+      box-shadow: var(--shadow-lg);
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      border-left: 1px solid var(--border-color);
+      z-index: 90;
+      padding: 24px;
+      display: none;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .category-item:hover .mega-menu {
+      display: grid;
+    }
+    .mega-column h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+    .mega-column ul {
+      list-style: none;
+    }
+    .mega-column ul li {
+      margin-bottom: 8px;
+    }
+    .mega-column ul li a {
+      font-size: 12.5px;
+      color: var(--dark-light);
+      transition: var(--transition);
+    }
+    .mega-column ul li a:hover {
+      color: var(--primary);
+      padding-left: 2px;
+    }
+
+    /* CAROUSEL SLIDESHOW (CENTER) */
+    .hero-slideshow {
+      background-color: #ddd;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      position: relative;
+      height: 100%;
+      box-shadow: var(--shadow-sm);
+    }
+    .slides-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease-in-out, visibility 0.6s;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 40px;
+    }
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .slide-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.1) 80%);
+      z-index: 1;
+    }
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      color: var(--white);
+      max-width: 450px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .slide-tag {
+      background-color: var(--primary);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .slide-content h2 {
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .slide-content p {
+      font-size: 14px;
+      opacity: 0.85;
+      margin-bottom: 24px;
+    }
+    .slide-btn {
+      background-color: var(--primary);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 10px rgba(246, 139, 30, 0.4);
+      transition: var(--transition);
+      display: inline-block;
+    }
+    .slide-btn:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+    
+    /* SLIDE NAVIGATION ARROWS */
+    .slide-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.3);
+      color: var(--white);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      transition: var(--transition);
+    }
+    .slide-arrow:hover {
+      background-color: var(--primary);
+    }
+    .slide-arrow.prev {
+      left: 16px;
+    }
+    .slide-arrow.next {
+      right: 16px;
+    }
+    .slide-arrow svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+    }
+    .slide-dots {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 3;
+    }
+    .slide-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .slide-dot.active {
+      background-color: var(--primary);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* RIGHT SIDEBAR - BANNER TILES */
+    .hero-right-banner {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      height: 100%;
+    }
+    .right-card {
+      background-color: var(--white);
+      border-radius: var(--border-radius);
+      flex: 1;
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: var(--transition);
+    }
+    .right-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .right-card-icon {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .right-card-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+    .right-card-text h4 {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 2px;
+    }
+    .right-card-text p {
+      font-size: 11px;
+      color: var(--dark-light);
+    }
+    
+    .right-promo-image {
+      flex: 2.2;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+    .right-promo-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    .right-promo-image:hover img {
+      transform: scale(1.05);
+    }
+    .right-promo-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background-color: var(--danger);
+      color: var(--white);
+      font-size: 9px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+
+    /* CAMPAIGN CIRCLE LINKS */
+    .campaign-grid {
+      background-color: var(--white);
+      border-radius: var(--border-radius);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+      overflow-x: auto;
+    }
+    .campaign-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      min-width: 75px;
+      transition: var(--transition);
+    }
+    .campaign-item:hover {
+      transform: translateY(-4px);
+    }
+    .campaign-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+      transition: var(--transition);
+      border: 1px solid rgba(246, 139, 30, 0.1);
+    }
+    .campaign-item:hover .campaign-icon {
+      background-color: var(--primary);
+      box-shadow: 0 4px 10px rgba(246, 139, 30, 0.25);
+    }
+    .campaign-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+    .campaign-item:hover .campaign-icon svg {
+      color: var(--white);
+    }
+    .campaign-item span {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--dark);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    /* FLASH SALES CONTAINER */
+    .section-card {
+      background-color: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .flash-sale-header {
+      background-color: var(--danger);
+      color: var(--white);
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .flash-sale-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .flash-sale-title {
+      font-size: 18px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .flash-sale-title svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+    
+    /* COUNTDOWN TIMER STYLING */
+    .countdown-timer {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .timer-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      opacity: 0.85;
+      font-weight: 600;
+    }
+    .timer-block {
+      background-color: var(--white);
+      color: var(--danger);
+      min-width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 4px;
+      box-shadow: var(--shadow-sm);
+    }
+    .timer-divider {
+      color: var(--white);
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .see-all-link {
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+    .see-all-link:hover {
+      opacity: 0.85;
+    }
+    .see-all-link svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      fill: none;
+    }
+
+    /* HORIZONTAL PRODUCTS CAROUSEL */
+    .horizontal-slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 16px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+    }
+    .horizontal-slider::-webkit-scrollbar {
+      height: 6px;
+    }
+    .horizontal-slider::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 10px;
+    }
+    .horizontal-slider::-webkit-scrollbar-thumb:hover {
+      background: #ccc;
+    }
+
+    /* PRODUCT CARD */
+    .product-card {
+      background-color: var(--white);
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border-color);
+      min-width: 180px;
+      max-width: 180px;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition);
+      padding: 8px;
+      user-select: none;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(246, 139, 30, 0.2);
+    }
+    .product-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 2px;
+      z-index: 5;
+    }
+    .product-badge.sale {
+      background-color: #fee;
+      color: var(--danger);
+    }
+    .product-img-wrapper {
+      width: 100%;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+      position: relative;
+    }
+    .product-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    .product-card:hover .product-img-wrapper img {
+      transform: scale(1.06);
+    }
+    
+    .product-info {
+      padding: 8px 4px 4px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .product-name {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 6px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      height: 38px;
+      line-height: 1.5;
+    }
+    .product-pricing {
+      margin-bottom: 6px;
+    }
+    .current-price {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .old-price-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+    }
+    .old-price {
+      color: var(--dark-light);
+      text-decoration: line-line-through;
+      text-decoration: line-through;
+    }
+    .discount-percent {
+      color: var(--danger);
+      font-weight: 600;
+      background-color: #ffebeb;
+      padding: 0 4px;
+      border-radius: 2px;
+    }
+
+    /* INVENTORY PRESSURE BAR */
+    .inventory-bar-wrapper {
+      margin-top: auto;
+      margin-bottom: 8px;
+    }
+    .inventory-label {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--dark-light);
+      margin-bottom: 3px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .inventory-bar {
+      height: 5px;
+      background-color: #ededed;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .inventory-bar-fill {
+      height: 100%;
+      background-color: var(--primary);
+      border-radius: 10px;
+    }
+    .inventory-bar-fill.low {
+      background-color: var(--danger);
+    }
+
+    /* CARD HOVER ACTION */
+    .add-to-cart-hover {
+      background-color: var(--primary);
+      color: var(--white);
+      text-align: center;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 8px;
+      border-radius: var(--border-radius);
+      margin-top: 4px;
+      transition: var(--transition);
+      opacity: 0;
+      transform: translateY(6px);
+      display: block;
+    }
+    .product-card:hover .add-to-cart-hover {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .add-to-cart-hover:hover {
+      background-color: var(--primary-hover);
+      box-shadow: 0 2px 8px rgba(246,139,30,0.3);
+    }
+    .add-to-cart-hover:active {
+      transform: scale(0.97);
+    }
+
+    /* DUAL BANNER ROW */
+    .promo-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .promo-banner-card {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      height: 180px;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+    .promo-banner-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    .promo-banner-card:hover img {
+      transform: scale(1.03);
+    }
+    .promo-banner-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 80%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 24px;
+      color: var(--white);
+    }
+    .promo-banner-overlay span {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .promo-banner-overlay h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      max-width: 250px;
+    }
+    .promo-banner-overlay button {
+      background-color: var(--white);
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: var(--border-radius);
+      align-self: flex-start;
+      transition: var(--transition);
+    }
+    .promo-banner-overlay button:hover {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    /* RECOMMENDATIONS / MAIN GRID */
+    .main-grid-header {
+      background-color: #e2f0d9;
+      color: #385723;
+      padding: 14px 16px;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(56, 87, 35, 0.1);
+    }
+    .main-grid-header.deals {
+      background-color: #fff2cc;
+      color: #7f6000;
+      border-bottom: 1px solid rgba(127, 96, 0, 0.1);
+    }
+    .main-grid-header.white {
+      background-color: var(--white);
+      color: var(--dark);
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      padding: 16px;
+    }
+    .no-results {
+      grid-column: span 6;
+      text-align: center;
+      padding: 48px 16px;
+      color: var(--dark-light);
+    }
+    .no-results svg {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 12px;
+      color: #bbb;
+    }
+    .no-results h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: var(--dark);
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #3e3e3f;
+      color: var(--white);
+      padding-top: 40px;
+      margin-top: 40px;
+      font-size: 12px;
+    }
+    .footer-newsletter {
+      background-color: #2b2b2b;
+      padding: 24px 0;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #4e4e4e;
+    }
+    .newsletter-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .newsletter-brand h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .newsletter-brand p {
+      color: #999;
+      font-size: 11px;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 8px;
+      flex: 1;
+      max-width: 500px;
+    }
+    .newsletter-form input {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: var(--border-radius);
+      background-color: #3e3e3f;
+      color: var(--white);
+      font-size: 13px;
+    }
+    .newsletter-form input::placeholder {
+      color: #888;
+    }
+    .newsletter-btn {
+      background-color: var(--primary);
+      color: var(--white);
+      font-weight: 700;
+      padding: 0 20px;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+    .newsletter-btn:hover {
+      background-color: var(--primary-hover);
+    }
+    .newsletter-gender {
+      display: flex;
+      gap: 8px;
+    }
+    .gender-btn {
+      background-color: transparent;
+      border: 1px solid #999;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 11px;
+      padding: 10px 16px;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+    .gender-btn:hover {
+      background-color: var(--white);
+      color: var(--dark);
+      border-color: var(--white);
+    }
+
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      color: #d1d1d6;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    .footer-col ul li a {
+      color: #a1a1a6;
+      transition: var(--transition);
+    }
+    .footer-col ul li a:hover {
+      color: var(--white);
+      padding-left: 2px;
+    }
+    
+    .footer-sub-grid {
+      border-top: 1px solid #4e4e4e;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-sub-links {
+      display: flex;
+      gap: 20px;
+      color: #8e8e93;
+    }
+    .footer-sub-links a:hover {
+      color: var(--white);
+    }
+    .footer-payment-icons {
+      display: flex;
+      gap: 8px;
+    }
+    .payment-icon {
+      background-color: #4e4e4e;
+      border-radius: 2px;
+      width: 38px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ccc;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    /* RIGHT CART DRAWER */
+    .cart-drawer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 199;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+    .cart-drawer-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 380px;
+      height: 100%;
+      background-color: var(--white);
+      box-shadow: var(--shadow-lg);
+      z-index: 200;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-drawer.active {
+      transform: translateX(0);
+    }
+
+    .cart-drawer-header {
+      padding: 16px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart-drawer-header h3 {
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cart-drawer-header h3 svg {
+      width: 20px;
+      height: 20px;
+      color: var(--primary);
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+    .cart-drawer-close {
+      background: transparent;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark-light);
+      transition: var(--transition);
+    }
+    .cart-drawer-close:hover {
+      background-color: var(--light-bg);
+      color: var(--dark);
+    }
+    .cart-drawer-close svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+    }
+
+    .cart-drawer-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .empty-cart-state {
+      text-align: center;
+      padding: 48px 16px;
+      color: var(--dark-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    .empty-cart-state svg {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 16px;
+      color: #e0e0e0;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .empty-cart-state p {
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+    .empty-cart-shop-btn {
+      background-color: var(--primary);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 24px;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+    .empty-cart-shop-btn:hover {
+      background-color: var(--primary-hover);
+    }
+
+    /* CART ITEM CARD */
+    .cart-item-card {
+      display: flex;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .cart-item-img {
+      width: 70px;
+      height: 70px;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid var(--border-color);
+    }
+    .cart-item-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cart-item-details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-item-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 4px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .cart-item-price {
+      font-weight: 700;
+      color: var(--dark);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .cart-item-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+    }
+    .qty-modifier {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+    }
+    .qty-btn {
+      background-color: #fafafa;
+      width: 28px;
+      height: 28px;
+      font-weight: 700;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    .qty-btn:hover {
+      background-color: var(--primary-light);
+      color: var(--primary);
+    }
+    .qty-number {
+      padding: 0 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark);
+      min-width: 24px;
+      text-align: center;
+    }
+    .cart-item-delete {
+      color: var(--danger);
+      background: transparent;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      border-radius: var(--border-radius);
+    }
+    .cart-item-delete:hover {
+      background-color: #fee;
+    }
+    .cart-item-delete svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .cart-drawer-footer {
+      padding: 16px;
+      border-top: 1px solid var(--border-color);
+      background-color: #fafafa;
+    }
+    .cart-subtotal-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+    .cart-subtotal-price {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .checkout-btn {
+      width: 100%;
+      background-color: var(--primary);
+      color: var(--white);
+      font-weight: 700;
+      padding: 14px;
+      border-radius: var(--border-radius);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(246, 139, 30, 0.3);
+      transition: var(--transition);
+    }
+    .checkout-btn:hover {
+      background-color: var(--primary-hover);
+    }
+    .checkout-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    /* GLOBAL MODAL SYSTEM */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 299;
+      opacity: 0;
+      visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-card {
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: var(--shadow-lg);
+      width: 90%;
+      max-width: 600px;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+      transform: scale(0.9);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .modal-overlay.active .modal-card {
+      transform: scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background-color: var(--light-bg);
+      color: var(--dark-light);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      z-index: 10;
+    }
+    .modal-close:hover {
+      background-color: #e0e0e2;
+      color: var(--dark);
+    }
+    .modal-close svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+    }
+
+    /* QUICK VIEW DETAIL MODAL */
+    .quick-view-flex {
+      display: flex;
+      gap: 24px;
+      padding: 32px;
+    }
+    .quick-view-img {
+      width: 240px;
+      height: 240px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      flex-shrink: 0;
+    }
+    .quick-view-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .quick-view-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .qv-category {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+    .qv-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    
+    /* STARS RATING */
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .rating-stars {
+      display: flex;
+      color: #ffc107;
+    }
+    .rating-stars svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+    .rating-count {
+      font-size: 12px;
+      color: var(--dark-light);
+    }
+
+    .qv-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 16px;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 12px 0;
+    }
+    .qv-current-price {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--dark);
+    }
+    .qv-old-price {
+      font-size: 14px;
+      color: var(--dark-light);
+      text-decoration: line-through;
+    }
+    .qv-discount {
+      background-color: #fee;
+      color: var(--danger);
+      font-weight: 700;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 2px;
+    }
+
+    .qv-description {
+      font-size: 13px;
+      color: var(--dark-light);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .qv-add-btn {
+      background-color: var(--primary);
+      color: var(--white);
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: var(--border-radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 10px rgba(246, 139, 30, 0.3);
+      transition: var(--transition);
+      margin-top: auto;
+    }
+    .qv-add-btn:hover {
+      background-color: var(--primary-hover);
+    }
+    .qv-add-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    /* SIGN-IN MODAL CONTENT */
+    .signin-modal-card {
+      max-width: 400px;
+      padding: 32px;
+      text-align: center;
+    }
+    .signin-header h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .signin-header p {
+      font-size: 12px;
+      color: var(--dark-light);
+      margin-bottom: 24px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .form-group input {
+      width: 100%;
+      border: 1px solid var(--border-color);
+      padding: 12px;
+      border-radius: var(--border-radius);
+      font-size: 14px;
+      transition: var(--transition);
+    }
+    .form-group input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(246, 139, 30, 0.15);
+    }
+    .signin-submit {
+      width: 100%;
+      background-color: var(--primary);
+      color: var(--white);
+      font-weight: 700;
+      padding: 12px;
+      border-radius: var(--border-radius);
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      transition: var(--transition);
+    }
+    .signin-submit:hover {
+      background-color: var(--primary-hover);
+    }
+    .signin-divider {
+      height: 1px;
+      background-color: var(--border-color);
+      margin: 16px 0;
+      position: relative;
+    }
+    .signin-divider::after {
+      content: 'OR';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--white);
+      padding: 0 8px;
+      font-size: 10px;
+      color: var(--dark-light);
+      font-weight: 600;
+    }
+    .social-signin {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+    .social-btn {
+      flex: 1;
+      border: 1px solid var(--border-color);
+      background-color: var(--white);
+      padding: 10px;
+      border-radius: var(--border-radius);
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .social-btn:hover {
+      background-color: var(--light-bg);
+    }
+
+    /* DYNAMIC TOAST SYSTEM */
+    .toast-container {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .toast {
+      background-color: #333;
+      color: var(--white);
+      padding: 12px 20px;
+      border-radius: 4px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      transform: translateX(120%);
+      animation: slideIn 0.3s forwards cubic-bezier(0.16, 1, 0.3, 1), fadeOut 0.3s 2.7s forwards;
+      border-left: 4px solid var(--primary);
+    }
+    .toast.success {
+      border-left-color: var(--success);
+    }
+    .toast.error {
+      border-left-color: var(--danger);
+    }
+    .toast svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    @keyframes slideIn {
+      to { transform: translateX(0); }
+    }
+    @keyframes fadeOut {
+      to { opacity: 0; transform: translateY(-10px); }
+    }
+
+    /* RESPONSIVE LAYOUT (MEDIA QUERIES) */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 200px 1fr;
+      }
+      .hero-right-banner {
+        display: none;
+      }
+      .campaign-grid {
+        grid-template-columns: repeat(8, 1fr);
+      }
+      .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .no-results {
+        grid-column: span 4;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-promo-bar {
+        display: none;
+      }
+      .header-flex {
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .logo {
+        font-size: 24px;
+      }
+      .search-box {
+        order: 3;
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        height: 280px;
+      }
+      .sidebar-categories {
+        display: none;
+      }
+      .campaign-grid {
+        grid-template-columns: repeat(5, 1fr);
+        padding: 12px;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .no-results {
+        grid-column: span 2;
+      }
+      .promo-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .newsletter-flex {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+      }
+      .cart-drawer {
+        width: 100%;
+      }
+      .quick-view-flex {
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+      }
+      .quick-view-img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .campaign-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .footer-columns {
+        grid-template-columns: 1fr;
+      }
+      .header-actions {
+        gap: 8px;
+      }
+      .header-btn {
+        padding: 6px;
+        font-size: 13px;
+      }
+      .header-btn span {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP PROMO STRIP -->
+  <div class="top-promo-bar">
+    <div class="container top-promo-flex">
+      <div class="top-promo-left">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+        <span>Need Help? Call Us: <strong>0201-888-3300</strong></span>
+      </div>
+      <div class="top-promo-right">
+        <a href="#" onclick="showToast('Marketplace Sign-up Simulation', 'success')">Sell on DONS</a>
+        <a href="#" onclick="openSignInModal()">DONS Pay</a>
+        <a href="#" onclick="showToast('Tracking System Simulation', 'success')">Track Order</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-flex">
+      
+      <!-- LOGO -->
+      <a href="#" class="logo-container" onclick="resetFilters(event)">
+        <div class="logo">
+          <span>DONS</span>
+        </div>
+      </a>
+
+      <!-- SEARCH BAR -->
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search products, brands and categories..." onkeyup="handleSearchInput(event)">
+        <button class="search-btn" onclick="triggerSearch()">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+        </button>
+      </div>
+
+      <!-- MAIN HEADER ACTIONS -->
+      <div class="header-actions">
+        
+        <!-- ACCOUNT DROPDOWN -->
+        <div class="dropdown-container">
+          <button class="header-btn">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <span>Account</span>
+            <svg viewBox="0 0 24 24" style="width: 14px; height: 14px;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-btn-main" onclick="openSignInModal()">Sign In</a>
+            <div class="divider"></div>
+            <a href="#" onclick="openSignInModal()"><svg viewBox="0 0 24 24" style="width:16px; height:16px; stroke:currentColor; stroke-width:2; fill:none;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> My Account</a>
+            <a href="#" onclick="showToast('Loading Orders list...', 'success')"><svg viewBox="0 0 24 24" style="width:16px; height:16px; stroke:currentColor; stroke-width:2; fill:none;"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg> Orders</a>
+            <a href="#" onclick="showToast('Your Saved Items Wishlist is empty', 'success')"><svg viewBox="0 0 24 24" style="width:16px; height:16px; stroke:currentColor; stroke-width:2; fill:none;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> Saved Items</a>
+          </div>
+        </div>
+
+        <!-- HELP DROPDOWN -->
+        <div class="dropdown-container">
+          <button class="header-btn">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            <span>Help</span>
+            <svg viewBox="0 0 24 24" style="width: 14px; height: 14px;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="#" onclick="showToast('Opening Help Center...', 'success')">Help Center</a>
+            <a href="#" onclick="showToast('Opening Order FAQs...', 'success')">Place & Track Order</a>
+            <a href="#" onclick="showToast('Opening Return & Refunds Guide...', 'success')">Returns & Refunds</a>
+            <a href="#" onclick="showToast('Opening Payment Options Portal...', 'success')">Payment Operations</a>
+          </div>
+        </div>
+
+        <!-- CART ICON -->
+        <button class="header-btn" onclick="toggleCartDrawer(true)">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span>Cart</span>
+          <div class="cart-badge" id="cartBadge">0</div>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- DONS CONTENT WRAPPER -->
+  <main class="container">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-grid">
+        
+        <!-- SIDEBAR CATEGORIES MENU -->
+        <div class="sidebar-categories" id="sidebarMenu">
+          <!-- Categories will insert here dynamically -->
+        </div>
+
+        <!-- BANNER AUTOPLAYING SLIDESHOW -->
+        <div class="hero-slideshow">
+          <div class="slides-container" id="slidesContainer">
+            <!-- Slides dynamically rendered here -->
+          </div>
+          
+          <button class="slide-arrow prev" onclick="changeSlide(-1)">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button class="slide-arrow next" onclick="changeSlide(1)">
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <div class="slide-dots" id="slideDots">
+            <!-- Dots dynamically generated -->
+          </div>
+        </div>
+
+        <!-- RIGHT BANNER PROMOS -->
+        <div class="hero-right-banner">
+          <div class="right-card" onclick="showToast('DONS Express Delivery Program', 'success')">
+            <div class="right-card-icon">
+              <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+            <div class="right-card-text">
+              <h4>DONS Express</h4>
+              <p>Free delivery on items</p>
+            </div>
+          </div>
+          <div class="right-card" onclick="showToast('DONS Return Policy Details', 'success')">
+            <div class="right-card-icon">
+              <svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+            </div>
+            <div class="right-card-text">
+              <h4>Easy Returns</h4>
+              <p>7-day secure refund</p>
+            </div>
+          </div>
+          <div class="right-promo-image" onclick="showToast('Electronics Special Clearance', 'success')">
+            <span class="right-promo-tag">Clearance</span>
+            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=600&q=90" alt="Special Promo Watch">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CIRCULAR CAMPAIGN LINK SHORTCUTS -->
+    <section class="campaign-grid" id="campaignGrid">
+      <!-- Shortcuts filled here dynamically -->
+    </section>
+
+    <!-- FLASH SALES SECTION -->
+    <section class="section-card">
+      <div class="flash-sale-header">
+        <div class="flash-sale-left">
+          <div class="flash-sale-title">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+            <span>Flash Sales</span>
+          </div>
+          <div class="countdown-timer">
+            <span class="timer-label">Time Left:</span>
+            <div class="timer-block" id="timerHrs">00</div>
+            <span class="timer-divider">:</span>
+            <div class="timer-block" id="timerMins">00</div>
+            <span class="timer-divider">:</span>
+            <div class="timer-block" id="timerSecs">00</div>
+          </div>
+        </div>
+        <a href="#recommended-section" class="see-all-link" onclick="resetFilters(event)">
+          <span>SEE ALL</span>
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </div>
+      <div class="horizontal-slider" id="flashSalesSlider">
+        <!-- Products with countdown flash deals -->
+      </div>
+    </section>
+
+    <!-- DOUBLE MARKETING CAMPAIGN BANNERS -->
+    <section class="promo-row">
+      <div class="promo-banner-card" onclick="filterByCategory('Fashion')">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=90" alt="Fashion campaign">
+        <div class="promo-banner-overlay">
+          <span>Brand New Trends</span>
+          <h3>FASHION OUTLET UP TO 70% OFF</h3>
+          <button>Shop Fashion</button>
+        </div>
+      </div>
+      <div class="promo-banner-card" onclick="filterByCategory('Appliances')">
+        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=90" alt="Kitchen Appliances">
+        <div class="promo-banner-overlay">
+          <span>Home upgrades</span>
+          <h3>KITCHEN APPLIANCES SALE</h3>
+          <button>Discover Deals</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOMMENDED / BESTSELLER PRODUCTS -->
+    <section class="section-card" id="recommended-section">
+      <div class="main-grid-header white" id="gridHeader">
+        <span>Recommended for You</span>
+        <span id="activeFilterBadge" style="font-size:12px; font-weight:600; color:var(--primary); background-color:var(--primary-light); padding:2px 8px; border-radius:10px; display:none;">Category: Phones</span>
+      </div>
+      <div class="products-grid" id="recommendedGrid">
+        <!-- Product dynamic loading grid -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-newsletter">
+      <div class="container newsletter-flex">
+        <div class="newsletter-brand">
+          <h3>NEW TO DONS?</h3>
+          <p>Subscribe to our newsletter to get updates on our latest offers!</p>
+        </div>
+        <div class="newsletter-form">
+          <input type="email" id="newsletterEmail" placeholder="Enter E-mail Address">
+          <button class="newsletter-btn" onclick="handleNewsletter(event, 'All')">SUBMIT</button>
+        </div>
+        <div class="newsletter-gender">
+          <button class="gender-btn" onclick="handleNewsletter(event, 'Male')">MALE</button>
+          <button class="gender-btn" onclick="handleNewsletter(event, 'Female')">FEMALE</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>LET US HELP YOU</h4>
+          <ul>
+            <li><a href="#" onclick="showToast('Help Center', 'success')">Help Center</a></li>
+            <li><a href="#" onclick="showToast('Place Order Help', 'success')">How to shop on DONS?</a></li>
+            <li><a href="#" onclick="showToast('Tracking Operations', 'success')">Delivery options & timelines</a></li>
+            <li><a href="#" onclick="showToast('Returns Portal', 'success')">How to return a product?</a></li>
+            <li><a href="#" onclick="showToast('Corporate Accounts Help', 'success')">Corporate and bulk purchases</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ABOUT DONS</h4>
+          <ul>
+            <li><a href="#" onclick="showToast('About Us Page', 'success')">About us</a></li>
+            <li><a href="#" onclick="showToast('Careers Page', 'success')">DONS careers</a></li>
+            <li><a href="#" onclick="showToast('Express Info', 'success')">DONS Express</a></li>
+            <li><a href="#" onclick="showToast('Privacy Statement', 'success')">Privacy Notice</a></li>
+            <li><a href="#" onclick="showToast('Flash Terms', 'success')">Flash Sales Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>MAKE MONEY WITH DONS</h4>
+          <ul>
+            <li><a href="#" onclick="showToast('Vendor Center', 'success')">Sell on DONS</a></li>
+            <li><a href="#" onclick="showToast('Affiliate Program', 'success')">Join DONS Affiliate Program</a></li>
+            <li><a href="#" onclick="showToast('Logistics Partnering', 'success')">Become a Logistics Partner</a></li>
+            <li><a href="#" onclick="showToast('Service Vendor Portal', 'success')">Become a Sales Consultant</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>DONS INTERNATIONAL</h4>
+          <ul>
+            <li><a href="#" onclick="showToast('Connecting to DONS Kenya...', 'success')">Kenya</a></li>
+            <li><a href="#" onclick="showToast('Connecting to DONS Egypt...', 'success')">Egypt</a></li>
+            <li><a href="#" onclick="showToast('Connecting to DONS Ghana...', 'success')">Ghana</a></li>
+            <li><a href="#" onclick="showToast('Connecting to DONS Morocco...', 'success')">Morocco</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-sub-grid">
+        <div class="footer-sub-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Cookie Preferences</a>
+        </div>
+        <div class="footer-payment-icons">
+          <div class="payment-icon">VERVE</div>
+          <div class="payment-icon">VISA</div>
+          <div class="payment-icon">MC</div>
+          <div class="payment-icon">CASH</div>
+        </div>
+        <div style="color: #a1a1a6; font-size:11px;">
+          &copy; 2026 DONS E-Commerce Portal. All Rights Reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RIGHT SLIDE-OUT CART DRAWER -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCartDrawer(false)"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3>
+        <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span>Your Cart (<span id="cartCountHeader">0</span>)</span>
+      </h3>
+      <button class="cart-drawer-close" onclick="toggleCartDrawer(false)">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    
+    <div class="cart-drawer-items" id="cartDrawerItems">
+      <!-- Cart items rendered here -->
+    </div>
+
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span class="cart-subtotal-price" id="cartSubtotal">₦ 0</span>
+      </div>
+      <button class="checkout-btn" onclick="triggerCheckout()">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        <span>CHECKOUT NOW</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUCT QUICK VIEW MODAL -->
+  <div class="modal-overlay" id="quickViewOverlay" onclick="toggleModal('quickViewOverlay', false)">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="toggleModal('quickViewOverlay', false)">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="quick-view-flex" id="quickViewContent">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTH / SIGN IN MODAL -->
+  <div class="modal-overlay" id="signInOverlay" onclick="toggleModal('signInOverlay', false)">
+    <div class="modal-card signin-modal-card" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="toggleModal('signInOverlay', false)">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="signin-header">
+        <h3>Welcome to DONS</h3>
+        <p>Sign in to your account or register to secure early flash deals!</p>
+      </div>
+      <form id="signInForm" onsubmit="handleSignIn(event)">
+        <div class="form-group">
+          <label for="signin-email">E-mail Address</label>
+          <input type="email" id="signin-email" placeholder="example@dons.com" required>
+        </div>
+        <div class="form-group">
+          <label for="signin-password">Password</label>
+          <input type="password" id="signin-password" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="signin-submit">LOGIN</button>
+      </form>
+      <div class="signin-divider"></div>
+      <div class="social-signin">
+        <button class="social-btn" onclick="handleSocialSignIn('Google')">
+          <svg style="width:16px; height:16px;" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 5.04c1.66 0 3.2.57 4.38 1.69l3.27-3.27C17.67 1.6 15.02 1 12 1 7.35 1 3.39 3.66 1.48 7.56l3.86 3C6.27 7.74 8.91 5.04 12 5.04z"/><path fill="#4285F4" d="M23.49 12.27c0-.81-.07-1.59-.2-2.36H12v4.51h6.46c-.28 1.48-1.12 2.73-2.38 3.58l3.7 2.87c2.16-1.99 3.41-4.92 3.41-8.6z"/><path fill="#FBBC05" d="M5.34 14.56c-.24-.72-.38-1.5-.38-2.31s.14-1.59.38-2.31L1.48 6.94C.54 8.88 0 11.02 0 13.25c0 2.23.54 4.37 1.48 6.31l3.86-3z"/><path fill="#34A853" d="M12 23c3.24 0 5.97-1.07 7.96-2.91l-3.7-2.87c-1.03.69-2.35 1.1-3.96 1.1-3.09 0-5.73-2.7-6.66-5.52l-3.86 3C3.39 19.34 7.35 23 12 23z"/></svg>
+          Google
+        </button>
+        <button class="social-btn" onclick="handleSocialSignIn('Facebook')">
+          <svg style="width:16px; height:16px; fill:#1877F2;" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></button>
+          Facebook
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- SCRIPTS -->
+  <script>
+    // ----------------------------------------------------
+    // PRODUCTS DATABASE (MOCKING REAL JUMIA DATA AS "DONS")
+    // ----------------------------------------------------
+    const CATEGORIES = [
+      { id: "appliances", name: "Appliances", icon: `<svg viewBox="0 0 24 24"><rect x="3" y="2" width="18" height="20" rx="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line><circle cx="8" cy="6" r="1.5"></circle><circle cx="16" cy="15" r="2.5"></circle></svg>` },
+      { id: "phones", name: "Phones & Tablets", icon: `<svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>` },
+      { id: "beauty", name: "Health & Beauty", icon: `<svg viewBox="0 0 24 24"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path><path d="M12 6V12L16 14"></path></svg>` },
+      { id: "electronics", name: "Electronics", icon: `<svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>` },
+      { id: "fashion", name: "Fashion", icon: `<svg viewBox="0 0 24 24"><path d="M20.37 4.65a2.22 2.22 0 0 0-2.02-1.65l-2.82-.41L12.7 1.15a2.22 2.22 0 0 0-3.4 0L6.47 2.59l-2.82.41a2.22 2.22 0 0 0-2.02 1.65L1 10.65A2.22 2.22 0 0 0 2.22 13h19.56A2.22 2.22 0 0 0 23 10.65l-.63-6zM3 21a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6H3v6z"></path></svg>` },
+      { id: "computing", name: "Computing", icon: `<svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="12" rx="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line><line x1="12" y1="16" x2="12" y2="20"></line></svg>` },
+      { id: "groceries", name: "Supermarket", icon: `<svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>` },
+      { id: "gaming", name: "Gaming", icon: `<svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="6" cy="12" r="1.5"></circle><line x1="14" y1="12" x2="16" y2="12"></line><line x1="15" y1="11" x2="15" y2="13"></line></svg>` }
+    ];
+
+    const SUB_CATEGORIES = {
+      "appliances": {
+        "Major Appliances": ["Refrigerators", "Chest Freezers", "Washing Machines", "Air Conditioners"],
+        "Small Appliances": ["Blenders", "Kettles", "Sandwich Makers", "Microwaves", "Standing Fans"]
+      },
+      "phones": {
+        "Smartphones": ["Samsung", "Xiaomi", "Infinix", "Tecno", "Poco", "itel"],
+        "Accessories": ["Power Banks", "Smartwatches", "Earbuds", "Chargers"]
+      },
+      "beauty": {
+        "Personal Care": ["Body Lotions", "Deodorants & Roll-ons", "Hair Trimmers"],
+        "Skincare": ["Cleansers", "Sunscreens", "Acne Control", "Serums"]
+      },
+      "electronics": {
+        "Smart TVs": ["TCL Google TVs", "Hisense TVs", "Royal QLED TVs", "MiJ Digital TVs"],
+        "Audio Systems": ["Soundbars", "Home Theaters", "Portable Speakers"]
+      },
+      "fashion": {
+        "Men's Fashion": ["Casual Shirts", "T-Shirts", "Jeans & Trousers", "Sneakers"],
+        "Women's Fashion": ["Midi Dresses", "Skirts", "Wide Leg Pants", "Handbag Sets"]
+      },
+      "computing": {
+        "Laptops": ["Asus Vivobooks", "HP Laptops", "Lenovo ThinkPads"],
+        "Accessories": ["Laptop Stands", "Wireless Mice", "Keyboards"]
+      },
+      "groceries": {
+        "Beverages": ["Whiskey", "Malt Drinks", "Juices"],
+        "Food Pantry": ["Pasta", "Rice", "Cereals"]
+      },
+      "gaming": {
+        "Consoles": ["PlayStation 4 Slim", "PlayStation 5 Console", "Nintendo Switch"],
+        "Accessories": ["Game Controllers", "Headsets"]
+      }
+    };
+
+    const PRODUCTS = [
+      {
+        id: 1,
+        name: "Nexus 50 Litres Bedside Refrigerator (NX-65) - Silver",
+        price: 99499,
+        originalPrice: 129000,
+        category: "Appliances",
+        image: "https://images.unsplash.com/photo-1571175432247-fe03a794c657?auto=format&fit=crop&w=600&q=90",
+        rating: 4.3,
+        reviewsCount: 145,
+        isFlashSale: true,
+        stockLeft: 14,
+        totalStock: 50,
+        description: "Keep your beverages chilled and snacks fresh with the Nexus NX-65 50L Bedside Refrigerator. Perfect for student dorms, master bedrooms, or private office cabins."
+      },
+      {
+        id: 2,
+        name: "Hisense 1HP Split Copper Inverter AC (AS09DK) - White",
+        price: 379999,
+        originalPrice: 493500,
+        category: "Appliances",
+        image: "https://images.unsplash.com/photo-1621905252507-b354bc25edac?auto=format&fit=crop&w=600&q=90",
+        rating: 4.7,
+        reviewsCount: 68,
+        isFlashSale: true,
+        stockLeft: 8,
+        totalStock: 30,
+        description: "Hisense 1HP split AC with full copper condenser and high intelligence inverter technology. Ensures silent cooling operations and saves up to 40% on monthly electric bills."
+      },
+      {
+        id: 3,
+        name: "Saisho Sandwich Maker - Double Plate S-609",
+        price: 12999,
+        originalPrice: 17500,
+        category: "Appliances",
+        image: "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=600&q=90",
+        rating: 4.1,
+        reviewsCount: 310,
+        isFlashSale: true,
+        stockLeft: 36,
+        totalStock: 80,
+        description: "Prepare healthy and crisp grilled sandwiches in minutes. Non-stick heating plates ensure easy food release and effortless cleanup."
+      },
+      {
+        id: 4,
+        name: "Binatone 20\" High Wind Force Stand Fan (TS-2020) + 2Y Warranty",
+        price: 65850,
+        originalPrice: 87800,
+        category: "Appliances",
+        image: "https://images.unsplash.com/photo-1618945037805-f62f3a67732a?auto=format&fit=crop&w=600&q=90",
+        rating: 4.4,
+        reviewsCount: 220,
+        isFlashSale: true,
+        stockLeft: 16,
+        totalStock: 45,
+        description: "Beat the heat with the Binatone high wind force standing fan. Comes equipped with heavy duty blades, 3-speed regulator options, and standard 2-year warranty."
+      },
+      {
+        id: 5,
+        name: "TCL 55 Inches UHD 4K Google Smart TV (55V6B)",
+        price: 414999,
+        originalPrice: 601400,
+        category: "Electronics",
+        image: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=600&q=90",
+        rating: 4.6,
+        reviewsCount: 89,
+        isFlashSale: false,
+        description: "Transform your living room into an immersive cinema. Features UHD 4K resolution, voice commands via Google Assistant, and limitless streaming applications."
+      },
+      {
+        id: 6,
+        name: "Samsung Galaxy A06 6.7\" 4GB RAM / 64GB ROM Android 14",
+        price: 119999,
+        originalPrice: 129000,
+        category: "Phones & Tablets",
+        image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=90",
+        rating: 4.5,
+        reviewsCount: 512,
+        isFlashSale: false,
+        description: "Enjoy fluid browsing and streaming with a broad 6.7\" display, high-capacity 5000mAh battery, and sharp 50MP rear camera."
+      },
+      {
+        id: 7,
+        name: "Xiaomi Redmi A7 Pro - 6.9'' 4GB RAM/64GB ROM - Black",
+        price: 131200,
+        originalPrice: 136600,
+        category: "Phones & Tablets",
+        image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=90",
+        rating: 4.2,
+        reviewsCount: 97,
+        isFlashSale: false,
+        description: "Unrivalled battery life and expansive display for everyday tasks. Experience standard Android operating system with Xiaomi UI optimizations."
+      },
+      {
+        id: 8,
+        name: "Xiaomi 20,000 mAh Redmi Fast Charge 18W Power Bank",
+        price: 17093,
+        originalPrice: 27500,
+        category: "Phones & Tablets",
+        image: "https://images.unsplash.com/photo-1609592424109-dd8af754b2a8?auto=format&fit=crop&w=600&q=90",
+        rating: 4.8,
+        reviewsCount: 1040,
+        isFlashSale: false,
+        description: "Heavy duty portable charging capability. Charge up to two devices concurrently with 18W fast charging and smart safety sensors."
+      },
+      {
+        id: 9,
+        name: "Adidas Core Sneakers Advantage Base - Triple White",
+        price: 27600,
+        originalPrice: 92000,
+        category: "Fashion",
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=90",
+        rating: 4.5,
+        reviewsCount: 185,
+        isFlashSale: false,
+        description: "Classic tennis-inspired sneakers built for lifestyle comfort. Smooth premium synthetic leather upper with iconic perforated 3-stripes styling."
+      },
+      {
+        id: 10,
+        name: "Trendyol Men's Printed Casual Short Sleeve Summer Shirt",
+        price: 9400,
+        originalPrice: 11750,
+        category: "Fashion",
+        image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=90",
+        rating: 4.0,
+        reviewsCount: 42,
+        isFlashSale: false,
+        description: "Stay cool and vibrant with this breathable, high-grade linen blend shirt. Perfect for beach getaways or casual weekend layouts."
+      },
+      {
+        id: 11,
+        name: "Cerave Acne Control Cleanser 237ml with 2% Salicylic Acid",
+        price: 3995,
+        originalPrice: 30700,
+        category: "Health & Beauty",
+        image: "https://images.unsplash.com/photo-1608248597481-496100c80836?auto=format&fit=crop&w=600&q=90",
+        rating: 4.7,
+        reviewsCount: 1250,
+        isFlashSale: true,
+        stockLeft: 3,
+        totalStock: 100,
+        description: "Deeply exfoliates and purifies pores without depleting natural moisture barriers. Formulated with three essential ceramides to repair skin defense."
+      },
+      {
+        id: 12,
+        name: "Nivea Dry Impact Roll-on + Nourishing Lotion 400ml Set",
+        price: 4617,
+        originalPrice: 6890,
+        category: "Health & Beauty",
+        image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=90",
+        rating: 4.4,
+        reviewsCount: 304,
+        isFlashSale: false,
+        description: "Total skin replenishment and personal hygiene. Get deep 48-hour moisture nourishment and complete wetness protection in one package."
+      },
+      {
+        id: 13,
+        name: "Silver Crest 8L Digital Airfryer - Extra Large Cooker",
+        price: 32941,
+        originalPrice: 43920,
+        category: "Appliances",
+        image: "https://images.unsplash.com/photo-1621972750749-0fbb1abb7736?auto=format&fit=crop&w=600&q=90",
+        rating: 4.3,
+        reviewsCount: 88,
+        isFlashSale: false,
+        description: "Oil-free cooking made rapid and delicious. Massive 8L space fits a full chicken, featuring custom digital touchscreen and smart temperature controller."
+      },
+      {
+        id: 14,
+        name: "itel Smart Watch Fit O20 2.04\" HD Display IP68 Waterproof",
+        price: 21700,
+        originalPrice: 23300,
+        category: "Phones & Tablets",
+        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=90",
+        rating: 4.2,
+        reviewsCount: 65,
+        isFlashSale: false,
+        description: "Monitor health and take phone calls from your wrist. Features crisp HD display screen, multiple fitness tracing trackers, and long-lasting standby battery."
+      }
+    ];
+
+    const SLIDES = [
+      {
+        tag: "Tech deals",
+        title: "DONS BIGGEST PHONES EXTRAVAGANZA",
+        text: "Unlock super discounts on top models: Samsung Galaxy, Xiaomi, and iPhones. Zero delivery fees today!",
+        image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1600&q=90",
+        link: "#recommended-section",
+        category: "Phones & Tablets"
+      },
+      {
+        tag: "Summer deals",
+        title: "DONS FASHION FESTIVAL OUTLET",
+        text: "Refresh your closet layout. Save up to 70% on sneakers, dresses, and shirts. Limited stock left!",
+        image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=90",
+        link: "#recommended-section",
+        category: "Fashion"
+      },
+      {
+        tag: "Kitchen treats",
+        title: "UPGRADE YOUR HOME COMFORT",
+        text: "Shop air conditioners, bedside refrigerators, blenders, and chest freezers with extended 2-year brand warranty.",
+        image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=90",
+        link: "#recommended-section",
+        category: "Appliances"
+      }
+    ];
+
+    const CAMPAIGN_SHORTCUTS = [
+      { name: "Awoof Deals", icon: `<svg viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg>`, filter: "all" },
+      { name: "Clearance", icon: `<svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>`, filter: "flash" },
+      { name: "Phones", icon: `<svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>`, filter: "Phones & Tablets" },
+      { name: "Appliances", icon: `<svg viewBox="0 0 24 24"><rect x="3" y="2" width="18" height="20" rx="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line></svg>`, filter: "Appliances" },
+      { name: "Fashion Deals", icon: `<svg viewBox="0 0 24 24"><path d="M20.37 4.65a2.22 2.22 0 0 0-2.02-1.65l-2.82-.41L12.7 1.15a2.22 2.22 0 0 0-3.4 0L6.47 2.59l-2.82.41a2.22 2.22 0 0 0-2.02 1.65L1 10.65A2.22 2.22 0 0 0 2.22 13h19.56A2.22 2.22 0 0 0 23 10.65l-.63-6zM3 21a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6H3v6z"></path></svg>`, filter: "Fashion" },
+      { name: "Health & Beauty", icon: `<svg viewBox="0 0 24 24"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path></svg>`, filter: "Health & Beauty" },
+      { name: "Supermarket", icon: `<svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>`, filter: "Supermarket" },
+      { name: "Computing", icon: `<svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="12" rx="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line></svg>`, filter: "Computing" },
+      { name: "Video Games", icon: `<svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="6" cy="12" r="1.5"></circle></svg>`, filter: "Gaming" },
+      { name: "Unlock Deal", icon: `<svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`, filter: "all" }
+    ];
+
+    // ----------------------------------------------------
+    // GLOBAL STATE MANAGEMENT
+    // ----------------------------------------------------
+    let cart = [];
+    let currentSlideIndex = 0;
+    let slideTimer = null;
+    let selectedCategoryFilter = "all";
+    let activeSearchQuery = "";
+
+    // ----------------------------------------------------
+    // INITIALIZATION FUNCTION
+    // ----------------------------------------------------
+    window.addEventListener("DOMContentLoaded", () => {
+      renderSidebarCategories();
+      renderSlides();
+      startSlideshowAutoplay();
+      renderCampaignShortcuts();
+      renderFlashSales();
+      renderProductsGrid();
+      startCountdownTimer();
+      loadCartFromStorage();
+      updateCartUI();
+    });
+
+    // ----------------------------------------------------
+    // CATEGORY SIDEBAR GENERATION
+    // ----------------------------------------------------
+    function renderSidebarCategories() {
+      const menu = document.getElementById("sidebarMenu");
+      menu.innerHTML = "";
+      
+      CATEGORIES.forEach(cat => {
+        const item = document.createElement("div");
+        item.className = "category-item";
+        item.onclick = () => filterByCategory(cat.name);
+        
+        let flyoutHtml = "";
+        const subCats = SUB_CATEGORIES[cat.id];
+        if (subCats) {
+          flyoutHtml = `<div class="mega-menu" onclick="event.stopPropagation()">`;
+          for (const [title, links] of Object.entries(subCats)) {
+            flyoutHtml += `
+              <div class="mega-column">
+                <h4>${title}</h4>
+                <ul>
+                  ${links.map(l => `<li><a href="#recommended-section" onclick="filterBySubCategory('${cat.name}', '${l}')">${l}</a></li>`).join("")}
+                </ul>
+              </div>
+            `;
+          }
+          flyoutHtml += `</div>`;
+        }
+
+        item.innerHTML = `
+          <div class="category-label">
+            ${cat.icon}
+            <span>${cat.name}</span>
+          </div>
+          <svg class="arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          ${flyoutHtml}
+        `;
+        menu.appendChild(item);
+      });
+    }
+
+    // ----------------------------------------------------
+    // BANNER HERO SLIDESHOW LOGIC
+    // ----------------------------------------------------
+    function renderSlides() {
+      const container = document.getElementById("slidesContainer");
+      const dots = document.getElementById("slideDots");
+      container.innerHTML = "";
+      dots.innerHTML = "";
+
+      SLIDES.forEach((slide, idx) => {
+        const slideCard = document.createElement("div");
+        slideCard.className = `slide ${idx === 0 ? "active" : ""}`;
+        slideCard.style.backgroundImage = `url('${slide.image}')`;
+        slideCard.innerHTML = `
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <span class="slide-tag">${slide.tag}</span>
+            <h2>${slide.title}</h2>
+            <p>${slide.text}</p>
+            <a href="${slide.link}" class="slide-btn" onclick="filterByCategory('${slide.category}')">Shop Now</a>
+          </div>
+        `;
+        container.appendChild(slideCard);
+
+        const dot = document.createElement("div");
+        dot.className = `slide-dot ${idx === 0 ? "active" : ""}`;
+        dot.onclick = () => goToSlide(idx);
+        dots.appendChild(dot);
+      });
+    }
+
+    function goToSlide(idx) {
+      clearInterval(slideTimer);
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".slide-dot");
+      
+      slides[currentSlideIndex].classList.remove("active");
+      dots[currentSlideIndex].classList.remove("active");
+      
+      currentSlideIndex = idx;
+      
+      slides[currentSlideIndex].classList.add("active");
+      dots[currentSlideIndex].classList.add("active");
+      startSlideshowAutoplay();
+    }
+
+    function changeSlide(direction) {
+      let targetIdx = currentSlideIndex + direction;
+      if (targetIdx >= SLIDES.length) targetIdx = 0;
+      if (targetIdx < 0) targetIdx = SLIDES.length - 1;
+      goToSlide(targetIdx);
+    }
+
+    function startSlideshowAutoplay() {
+      slideTimer = setInterval(() => {
+        changeSlide(1);
+      }, 5000);
+    }
+
+    // ----------------------------------------------------
+    // CIRCULAR SHORTCUTS LOGIC
+    // ----------------------------------------------------
+    function renderCampaignShortcuts() {
+      const grid = document.getElementById("campaignGrid");
+      grid.innerHTML = "";
+      
+      CAMPAIGN_SHORTCUTS.forEach(sc => {
+        const item = document.createElement("div");
+        item.className = "campaign-item";
+        item.onclick = () => {
+          if (sc.filter === "flash") {
+            const el = document.getElementById("flashSalesSlider");
+            el.scrollIntoView({ behavior: "smooth" });
+            showToast("Filtering Flash Sales deals!", "success");
+          } else {
+            filterByCategory(sc.filter);
+          }
+        };
+        item.innerHTML = `
+          <div class="campaign-icon">${sc.icon}</div>
+          <span>${sc.name}</span>
+        `;
+        grid.appendChild(item);
+      });
+    }
+
+    // ----------------------------------------------------
+    // FLASH SALES RENDERER
+    // ----------------------------------------------------
+    function renderFlashSales() {
+      const slider = document.getElementById("flashSalesSlider");
+      slider.innerHTML = "";
+      
+      const flashItems = PRODUCTS.filter(p => p.isFlashSale);
+      
+      flashItems.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        
+        const discountVal = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+        const ratio = (product.stockLeft / product.totalStock) * 100;
+        
+        card.innerHTML = `
+          <span class="product-badge sale">-${discountVal}%</span>
+          <div class="product-img-wrapper" onclick="openQuickView(${product.id})">
+            <img src="${product.image}" alt="${product.name}" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h4 class="product-name" onclick="openQuickView(${product.id})">${product.name}</h4>
+            <div class="product-pricing">
+              <span class="current-price">KSh ${formatNumber(product.price)}</span>
+              <div class="old-price-row">
+                <span class="old-price">KSh ${formatNumber(product.originalPrice)}</span>
+                <span class="discount-percent">-${discountVal}%</span>
+              </div>
+            </div>
+            <div class="inventory-bar-wrapper">
+              <div class="inventory-label">
+                <span>Items Left: <strong>${product.stockLeft}</strong></span>
+              </div>
+              <div class="inventory-bar">
+                <div class="inventory-bar-fill ${product.stockLeft <= 5 ? "low" : ""}" style="width: ${ratio}%"></div>
+              </div>
+            </div>
+            <button class="add-to-cart-hover" onclick="addToCart(${product.id})">ADD TO CART</button>
+          </div>
+        `;
+        slider.appendChild(card);
+      });
+    }
+
+    // ----------------------------------------------------
+    // BESTSELLERS RECOMMENDED GRID RENDERER
+    // ----------------------------------------------------
+    function renderProductsGrid() {
+      const grid = document.getElementById("recommendedGrid");
+      grid.innerHTML = "";
+      
+      let filtered = PRODUCTS;
+      
+      // Category Filter
+      if (selectedCategoryFilter !== "all") {
+        filtered = filtered.filter(p => p.category === selectedCategoryFilter);
+      }
+      
+      // Search Filter
+      if (activeSearchQuery !== "") {
+        const q = activeSearchQuery.toLowerCase();
+        filtered = filtered.filter(p => 
+          p.name.toLowerCase().includes(q) || 
+          p.category.toLowerCase().includes(q) ||
+          p.description.toLowerCase().includes(q)
+        );
+      }
+
+      const activeBadge = document.getElementById("activeFilterBadge");
+      if (selectedCategoryFilter !== "all" || activeSearchQuery !== "") {
+        activeBadge.style.display = "inline-block";
+        activeBadge.textContent = selectedCategoryFilter !== "all" 
+          ? `Filter: ${selectedCategoryFilter}` 
+          : `Search: "${activeSearchQuery}"`;
+      } else {
+        activeBadge.style.display = "none";
+      }
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="no-results">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <h3>No results found</h3>
+            <p>We couldn't find matches for "${activeSearchQuery || selectedCategoryFilter}". Try checking your spelling or reset filters.</p>
+            <button onclick="resetFilters(event)" class="empty-cart-shop-btn" style="margin-top:12px; font-size:12px; padding:6px 16px;">Reset Layout</button>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        
+        const hasDiscount = product.originalPrice && product.originalPrice > product.price;
+        let badgeHtml = "";
+        let discountRowHtml = "";
+        
+        if (hasDiscount) {
+          const discountVal = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+          badgeHtml = `<span class="product-badge sale">-${discountVal}%</span>`;
+          discountRowHtml = `
+            <div class="old-price-row">
+              <span class="old-price">KSh ${formatNumber(product.originalPrice)}</span>
+              <span class="discount-percent">-${discountVal}%</span>
+            </div>
+          `;
+        } else {
+          badgeHtml = `<span class="product-badge">Official</span>`;
+        }
+
+        card.innerHTML = `
+          ${badgeHtml}
+          <div class="product-img-wrapper" onclick="openQuickView(${product.id})">
+            <img src="${product.image}" alt="${product.name}" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h4 class="product-name" onclick="openQuickView(${product.id})">${product.name}</h4>
+            <div class="product-pricing">
+              <span class="current-price">KSh ${formatNumber(product.price)}</span>
+              ${discountRowHtml}
+            </div>
+            <button class="add-to-cart-hover" onclick="addToCart(${product.id})">ADD TO CART</button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // ----------------------------------------------------
+    // FLASH SALES REAL-TIME COUNTDOWN TIMER
+    // ----------------------------------------------------
+    function startCountdownTimer() {
+      const getTimerEnd = () => {
+        const now = new Date();
+        const end = new Date();
+        end.setHours(23, 59, 59, 999); // Count down to end of current day
+        return end.getTime();
+      };
+
+      const endTime = getTimerEnd();
+
+      const updateClock = () => {
+        const now = new Date().getTime();
+        const diff = endTime - now;
+
+        if (diff <= 0) {
+          document.getElementById("timerHrs").textContent = "00";
+          document.getElementById("timerMins").textContent = "00";
+          document.getElementById("timerSecs").textContent = "00";
+          return;
+        }
+
+        const hrs = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById("timerHrs").textContent = String(hrs).padStart(2, '0');
+        document.getElementById("timerMins").textContent = String(mins).padStart(2, '0');
+        document.getElementById("timerSecs").textContent = String(secs).padStart(2, '0');
+      };
+
+      updateClock();
+      setInterval(updateClock, 1000);
+    }
+
+    // ----------------------------------------------------
+    // DONS E-COMMERCE CART SYSTEM CONTROLLERS
+    // ----------------------------------------------------
+    function addToCart(productId) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      const existing = cart.find(item => item.product.id === productId);
+      
+      if (existing) {
+        existing.quantity += 1;
+        showToast(`Increased quantity of ${product.name.substring(0, 20)}...`, "success");
+      } else {
+        cart.push({ product, quantity: 1 });
+        showToast(`Added ${product.name.substring(0, 20)}... to Cart!`, "success");
+      }
+
+      saveCartToStorage();
+      updateCartUI();
+    }
+
+    function modifyCartQuantity(productId, delta) {
+      const itemIndex = cart.findIndex(item => item.product.id === productId);
+      if (itemIndex === -1) return;
+
+      cart[itemIndex].quantity += delta;
+      
+      if (cart[itemIndex].quantity <= 0) {
+        cart.splice(itemIndex, 1);
+        showToast("Product removed from Cart", "error");
+      } else {
+        showToast("Cart updated successfully", "success");
+      }
+
+      saveCartToStorage();
+      updateCartUI();
+    }
+
+    function deleteCartItem(productId) {
+      const itemIndex = cart.findIndex(item => item.product.id === productId);
+      if (itemIndex === -1) return;
+
+      const itemName = cart[itemIndex].product.name;
+      cart.splice(itemIndex, 1);
+      showToast(`${itemName.substring(0, 20)}... deleted from Cart`, "error");
+
+      saveCartToStorage();
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const badge = document.getElementById("cartBadge");
+      const headerCount = document.getElementById("cartCountHeader");
+      const drawerItems = document.getElementById("cartDrawerItems");
+      const footer = document.getElementById("cartDrawerFooter");
+      
+      const totalQty = cart.reduce((acc, curr) => acc + curr.quantity, 0);
+      badge.textContent = totalQty;
+      headerCount.textContent = totalQty;
+
+      if (cart.length === 0) {
+        drawerItems.innerHTML = `
+          <div class="empty-cart-state">
+            <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            <h3>Your Cart is empty</h3>
+            <p>Ready to shop? Discover premium daily electronics & hot deals at DONS now.</p>
+            <button class="empty-cart-shop-btn" onclick="toggleCartDrawer(false)">Start Shopping</button>
+          </div>
+        `;
+        footer.style.display = "none";
+        return;
+      }
+
+      footer.style.display = "block";
+      drawerItems.innerHTML = "";
+      let subtotalVal = 0;
+
+      cart.forEach(item => {
+        const itemTotal = item.product.price * item.quantity;
+        subtotalVal += itemTotal;
+
+        const cartItemEl = document.createElement("div");
+        cartItemEl.className = "cart-item-card";
+        cartItemEl.innerHTML = `
+          <div class="cart-item-img">
+            <img src="${item.product.image}" alt="${item.product.name}">
+          </div>
+          <div class="cart-item-details">
+            <h4 class="cart-item-name">${item.product.name}</h4>
+            <div class="cart-item-price">KSh ${formatNumber(item.product.price)}</div>
+            <div class="cart-item-actions">
+              <div class="qty-modifier">
+                <button class="qty-btn" onclick="modifyCartQuantity(${item.product.id}, -1)">-</button>
+                <div class="qty-number">${item.quantity}</div>
+                <button class="qty-btn" onclick="modifyCartQuantity(${item.product.id}, 1)">+</button>
+              </div>
+              <button class="cart-item-delete" onclick="deleteCartItem(${item.product.id})">
+                <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              </button>
+            </div>
+          </div>
+        `;
+        drawerItems.appendChild(cartItemEl);
+      });
+
+      document.getElementById("cartSubtotal").textContent = `KSh ${formatNumber(subtotalVal)}`;
+    }
+
+    function toggleCartDrawer(open) {
+      const overlay = document.getElementById("cartOverlay");
+      const drawer = document.getElementById("cartDrawer");
+      if (open) {
+        overlay.classList.add("active");
+        drawer.classList.add("active");
+      } else {
+        overlay.classList.remove("active");
+        drawer.classList.remove("active");
+      }
+    }
+
+    function triggerCheckout() {
+      toggleCartDrawer(false);
+      
+      const successPopup = document.createElement("div");
+      successPopup.className = "modal-overlay active";
+      successPopup.innerHTML = `
+        <div class="modal-card" style="max-width: 420px; padding: 40px 32px; text-align: center;">
+          <div style="background-color: #eafbe7; color: var(--success); width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin: 0 auto 24px;">
+            <svg style="width:36px; height:36px;" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <h3 style="font-size:22px; font-weight:800; color:var(--dark); margin-bottom:12px;">ORDER SECURED</h3>
+          <p style="font-size:13px; color:var(--dark-light); line-height:1.6; margin-bottom:28px;">Thank you for shopping with **DONS**! We have processed your order successfully. Cash on delivery is approved.</p>
+          <button class="checkout-btn" style="box-shadow:none;" onclick="closeCheckoutSuccess(this)">SHOP MORE</button>
+        </div>
+      `;
+      document.body.appendChild(successPopup);
+      
+      // Clear Cart state
+      cart = [];
+      saveCartToStorage();
+      updateCartUI();
+    }
+
+    function closeCheckoutSuccess(btn) {
+      const modal = btn.closest(".modal-overlay");
+      modal.remove();
+      showToast("Start shopping again at DONS!", "success");
+    }
+
+    // ----------------------------------------------------
+    // DONS FILTER & SEARCH LOGIC
+    // ----------------------------------------------------
+    function filterByCategory(categoryName) {
+      selectedCategoryFilter = categoryName;
+      activeSearchQuery = "";
+      
+      const header = document.getElementById("gridHeader");
+      header.innerHTML = `
+        <span>Category: ${categoryName === 'all' ? 'All Recommended Items' : categoryName}</span>
+      `;
+      
+      renderProductsGrid();
+      
+      const el = document.getElementById("recommended-section");
+      el.scrollIntoView({ behavior: "smooth" });
+      
+      showToast(`Loading category: ${categoryName}`, "success");
+    }
+
+    function filterBySubCategory(category, subCategory) {
+      selectedCategoryFilter = category;
+      activeSearchQuery = subCategory;
+      
+      const header = document.getElementById("gridHeader");
+      header.innerHTML = `
+        <span>Category: ${category} / ${subCategory}</span>
+      `;
+      
+      renderProductsGrid();
+      
+      const el = document.getElementById("recommended-section");
+      el.scrollIntoView({ behavior: "smooth" });
+      
+      showToast(`Showing deals for ${subCategory}`, "success");
+    }
+
+    function handleSearchInput(event) {
+      if (event.key === "Enter") {
+        triggerSearch();
+      }
+    }
+
+    function triggerSearch() {
+      const input = document.getElementById("searchInput");
+      activeSearchQuery = input.value.trim();
+      selectedCategoryFilter = "all";
+      
+      const header = document.getElementById("gridHeader");
+      header.innerHTML = `
+        <span>Search results for: "${activeSearchQuery}"</span>
+      `;
+      
+      renderProductsGrid();
+      
+      const el = document.getElementById("recommended-section");
+      el.scrollIntoView({ behavior: "smooth" });
+      
+      showToast(`Filtering items matching: "${activeSearchQuery}"`, "success");
+    }
+
+    function resetFilters(event) {
+      if (event) event.preventDefault();
+      selectedCategoryFilter = "all";
+      activeSearchQuery = "";
+      document.getElementById("searchInput").value = "";
+      
+      const header = document.getElementById("gridHeader");
+      header.innerHTML = `<span>Recommended for You</span>`;
+      
+      renderProductsGrid();
+      showToast("DONS homepage layout restored", "success");
+    }
+
+    // ----------------------------------------------------
+    // QUICK VIEW MODAL CONTROLLERS
+    // ----------------------------------------------------
+    function openQuickView(productId) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      const content = document.getElementById("quickViewContent");
+      const hasDiscount = product.originalPrice && product.originalPrice > product.price;
+      
+      let priceHtml = "";
+      if (hasDiscount) {
+        const discountVal = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+        priceHtml = `
+          <span class="qv-current-price">KSh ${formatNumber(product.price)}</span>
+          <span class="qv-old-price">KSh ${formatNumber(product.originalPrice)}</span>
+          <span class="qv-discount">-${discountVal}% OFF</span>
+        `;
+      } else {
+        priceHtml = `
+          <span class="qv-current-price">KSh ${formatNumber(product.price)}</span>
+        `;
+      }
+
+      // Generate rating stars
+      const fullStars = Math.floor(product.rating);
+      let starsHtml = "";
+      for (let i = 0; i < 5; i++) {
+        if (i < fullStars) {
+          starsHtml += `<svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`;
+        } else {
+          starsHtml += `<svg style="color:#e0e0e0;" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`;
+        }
+      }
+
+      content.innerHTML = `
+        <div class="quick-view-img">
+          <img src="${product.image}" alt="${product.name}">
+        </div>
+        <div class="quick-view-info">
+          <span class="qv-category">${product.category}</span>
+          <h3 class="qv-title">${product.name}</h3>
+          
+          <div class="rating-row">
+            <div class="rating-stars">${starsHtml}</div>
+            <span class="rating-count">(${product.reviewsCount} customer reviews)</span>
+          </div>
+
+          <div class="qv-price-row">
+            ${priceHtml}
+          </div>
+
+          <p class="qv-description">${product.description}</p>
+          
+          <button class="qv-add-btn" onclick="addToCart(${product.id}); toggleModal('quickViewOverlay', false);">
+            <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            <span>ADD TO CART</span>
+          </button>
+        </div>
+      `;
+
+      toggleModal('quickViewOverlay', true);
+    }
+
+    function toggleModal(modalId, open) {
+      const modal = document.getElementById(modalId);
+      if (open) {
+        modal.classList.add("active");
+      } else {
+        modal.classList.remove("active");
+      }
+    }
+
+    // ----------------------------------------------------
+    // DYNAMIC AUTH SIGN-IN MODAL
+    // ----------------------------------------------------
+    function openSignInModal() {
+      toggleModal('signInOverlay', true);
+    }
+
+    function handleSignIn(event) {
+      event.preventDefault();
+      const email = document.getElementById("signin-email").value;
+      
+      toggleModal('signInOverlay', false);
+      showToast(`Welcome back, ${email.split('@')[0]}! Simulated login success.`, "success");
+      
+      document.getElementById("signInForm").reset();
+    }
+
+    function handleSocialSignIn(platform) {
+      toggleModal('signInOverlay', false);
+      showToast(`Logged in successfully with ${platform}!`, "success");
+    }
+
+    // ----------------------------------------------------
+    // NEWSLETTER SIMULATION
+    // ----------------------------------------------------
+    function handleNewsletter(event, gender) {
+      event.preventDefault();
+      const email = document.getElementById("newsletterEmail").value.trim();
+      
+      if (!email) {
+        showToast("Please provide a valid E-mail address", "error");
+        return;
+      }
+
+      showToast(`Subscription successful! We've saved your interest for: ${gender} Deals.`, "success");
+      document.getElementById("newsletterEmail").value = "";
+    }
+
+    // ----------------------------------------------------
+    // AUXILIARY UTILITIES
+    // ----------------------------------------------------
+    function formatNumber(num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function showToast(message, type = "success") {
+      const container = document.getElementById("toastContainer");
+      const toast = document.createElement("div");
+      toast.className = `toast ${type}`;
+      
+      let icon = "";
+      if (type === "success") {
+        icon = `<svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+      } else {
+        icon = `<svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+      }
+
+      toast.innerHTML = `
+        ${icon}
+        <span>${message}</span>
+      `;
+      
+      container.appendChild(toast);
+
+      // Auto clear DOM representation
+      setTimeout(() => {
+        toast.remove();
+      }, 3000);
+    }
+
+    // LOCAL STORAGE SYNC
+    function saveCartToStorage() {
+      localStorage.setItem("dons_cart", JSON.stringify(cart));
+    }
+
+    function loadCartFromStorage() {
+      const data = localStorage.getItem("dons_cart");
+      if (data) {
+        try {
+          cart = JSON.parse(data);
+        } catch (e) {
+          cart = [];
+        }
+      }
+    }
+  </script>
+</body>
+</html>
